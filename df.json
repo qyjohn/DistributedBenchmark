@@ -1,0 +1,17 @@
+{
+    "jobName" : "ls",
+    "jobs" : [
+        {
+            "node" : "*",
+            "command" : "df -h"
+        },
+        {
+            "node" : "172.31.0.20",
+            "command" : "ifconfig"
+        },
+        {
+            "node" : "172.31.0.209",
+            "command" : "df -h -i"
+        }
+    ]
+}
