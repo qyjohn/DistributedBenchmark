@@ -1,7 +1,11 @@
 package net.qyjohn.DistributedBenchmark;
 
 import java.io.*;
+import java.net.*;
+import java.util.*;
 import com.rabbitmq.client.*;
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 public class Worker
 {
@@ -13,8 +17,18 @@ public class Worker
 	{
 		try
 		{
+			// Getting the IP address of the worker node
+			final String nodeName = InetAddress.getLocalHost().getHostAddress();
+
+			// Getting database properties from db.properties
+			Properties prop = new Properties();
+			InputStream input = new FileInputStream("config.properties");
+			prop.load(input);
+			String mqHostname = prop.getProperty("mqHostname");
+
+			// Creating a connection to MQ
 			ConnectionFactory factory = new ConnectionFactory();
-			factory.setHost("localhost");
+			factory.setHost(mqHostname);
 			connection = factory.newConnection();
 			channel = connection.createChannel();
 
@@ -22,6 +36,7 @@ public class Worker
 			String queueName = channel.queueDeclare().getQueue();
 			channel.queueBind(queueName, EXCHANGE_NAME, "");
 
+			System.out.println("[*] Worker node: " + nodeName);
 			System.out.println("[*] Waiting for messages. To exit press CTRL+C");
 
 			Consumer consumer = new DefaultConsumer(channel)
@@ -30,10 +45,30 @@ public class Worker
 				public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException 
 				{
 					String message = new String(body, "UTF-8");
-					Executor executor = new Executor(message);
-					executor.start();
-//					String message = new String(body, "UTF-8");
-//					System.out.println(" [x] Received '" + message + "'");
+
+					try
+					{
+						JSONParser parser = new JSONParser();
+						JSONObject jsonObj = (JSONObject) parser.parse(message);
+						JSONArray records = (JSONArray) jsonObj.get("jobs");
+						Iterator i = records.iterator();
+						while (i.hasNext())
+						{
+							JSONObject record = (JSONObject) i.next();
+							String node = (String) record.get("node");
+							String command = (String) record.get("command");
+
+							// Is this command for me?
+							if (node.equals(nodeName) || node.equals("*"))
+							{
+								Executor executor = new Executor(nodeName, command);
+								executor.start();
+								executor.join();
+							}
+						}
+					} catch (Exception e)
+					{
+					}
 				}
 			};
 			channel.basicConsume(queueName, true, consumer);

@@ -1,0 +1,17 @@
+{
+    "jobName" : "ls",
+    "jobs" : [
+        {
+            "node" : "*",
+            "command" : "ls"
+        },
+        {
+            "node" : "172.31.0.20",
+            "command" : "ls -l -R"
+        },
+        {
+            "node" : "172.31.0.209",
+            "command" : "ls -l -R"
+        }
+    ]
+}

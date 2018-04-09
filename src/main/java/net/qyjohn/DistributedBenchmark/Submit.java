@@ -1,5 +1,8 @@
 package net.qyjohn.DistributedBenchmark;
 
+import java.io.*;
+import java.nio.file.*;
+import java.util.*;
 import com.rabbitmq.client.*;
 
 public class Submit
@@ -12,8 +15,15 @@ public class Submit
 	{
 		try
 		{
+			// Getting database properties from db.properties
+			Properties prop = new Properties();
+			InputStream input = new FileInputStream("config.properties");
+			prop.load(input);
+			String mqHostname = prop.getProperty("mqHostname");
+
+			// Creating a connection to MQ
 			ConnectionFactory factory = new ConnectionFactory();
-			factory.setHost("localhost");
+			factory.setHost(mqHostname);
 			connection = factory.newConnection();
 			channel = connection.createChannel();
 		} catch (Exception e)
@@ -44,8 +54,14 @@ public class Submit
 
 	public static void main(String[] args)
 	{
-		Submit submit = new Submit();
-		submit.send("Test");
-		submit.close();
+		try
+		{
+			Submit submit = new Submit();
+			String contents = new String(Files.readAllBytes(Paths.get(args[0])));
+			submit.send(contents);
+			submit.close();
+		} catch (Exception e)
+		{
+		}
 	}
 }
