@@ -1,6 +1,7 @@
 # DistributedBenchmark
 
 
+**Installation and Configuration**
 
 ~~~~
 $ mysql -u root -p
