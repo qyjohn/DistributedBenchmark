@@ -1,7 +1,7 @@
 # Distributed and Parallel Testing Framework
 
 
-**Installation and Configuration**
+***(1) Installation and Configuration***
 
 We assume that you will run the Distributed and Parallel Testing Framework on Ubuntu 16.04. You need to have a recent version of JDK and RabbitMQ. Then you can build the project from source code with the following steps.
 
@@ -49,7 +49,7 @@ You might need to enable remote access to your MySQL server. This can be achieve
 bind-address		= 0.0.0.0
 ~~~~
 
-**Running Tests**
+***(2) Running Tests***
 
 Open two SSH connections to your server, one to submit jobs (pretend that this is the master node), the other to execute jobs (pretend that this is the worker node).
 
@@ -70,7 +70,7 @@ $ java -cp target/DistributedBenchmark-jar-with-dependencies.jar:. net.qyjohn.Di
 
 Observe how the jobs are executed on the worker node. If you add another worker node (even on the same server), the new worker node will also execute the same jobs.
 
-**Composing Tests**
+***(3)Composing Tests***
 
 Use the following example to compose your tests. In the Distributed and Parallel Testing Framework, there are two types of jobs - node-generic jobs and node-specific jobs. For node-generic jobs, the value for the "node" attribute should be the wildcard character "*". For node-specific jobs, the value for the "node" attribute should be the IP address of the worker node. 
 
