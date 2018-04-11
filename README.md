@@ -49,6 +49,13 @@ You might need to enable remote access to your MySQL server. This can be achieve
 bind-address		= 0.0.0.0
 ~~~~
 
+Restart MySQL server and RabbitMQ with the following commands:
+
+~~~~
+$ sudo service mysql restart
+$ sudo service rabbitmq-server restart
+~~~~
+
 **(2) Running Tests**
 
 Open two SSH connections to your server, one to submit jobs (pretend that this is the master node), the other to execute jobs (pretend that this is the worker node).
