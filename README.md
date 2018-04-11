@@ -74,6 +74,8 @@ Observe how the jobs are executed on the worker node. If you add another worker 
 
 Use the following example to compose your tests. In the Distributed and Parallel Testing Framework, there are two types of jobs - node-generic jobs and node-specific jobs. For node-generic jobs, the value for the "node" attribute should be the wildcard character "*". For node-specific jobs, the value for the "node" attribute should be the IP address of the worker node. 
 
+The value for the "command" attribute is the command to run on the worker nodes. The command must be present in the PATH, which is represented by the "path" attribute. 
+
 ~~~~
 {
     "testName" : "ls",
