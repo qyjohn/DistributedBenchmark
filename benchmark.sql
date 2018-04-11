@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.21, for Linux (x86_64)
 --
--- Host: 172.31.0.20    Database: benchmark
+-- Host: localhost    Database: benchmark
 -- ------------------------------------------------------
 -- Server version	5.7.21-0ubuntu0.16.04.1
 
@@ -24,6 +24,8 @@ DROP TABLE IF EXISTS `logs`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `logs` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `test_id` varchar(80) DEFAULT NULL,
+  `test_name` varchar(80) DEFAULT NULL,
   `node` varchar(80) DEFAULT NULL,
   `command` varchar(255) DEFAULT NULL,
   `stdout` text,
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-04-09  4:01:05
+-- Dump completed on 2018-04-11 10:48:48

@@ -1,16 +1,19 @@
 {
-    "jobName" : "ls",
+    "testName" : "ls",
     "jobs" : [
         {
             "node" : "*",
-            "command" : "ls"
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+            "command" : "ls -l"
         },
         {
             "node" : "172.31.0.20",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
             "command" : "ls -l -R"
         },
         {
             "node" : "172.31.0.209",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
             "command" : "ls -l -R"
         }
     ]

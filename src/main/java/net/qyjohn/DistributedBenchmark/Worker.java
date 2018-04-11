@@ -50,18 +50,21 @@ public class Worker
 					{
 						JSONParser parser = new JSONParser();
 						JSONObject jsonObj = (JSONObject) parser.parse(message);
+						String testId = (String) jsonObj.get("testId");
+						String testName = (String) jsonObj.get("testName");
 						JSONArray records = (JSONArray) jsonObj.get("jobs");
 						Iterator i = records.iterator();
 						while (i.hasNext())
 						{
 							JSONObject record = (JSONObject) i.next();
 							String node = (String) record.get("node");
+							String path = (String) record.get("path");
 							String command = (String) record.get("command");
 
 							// Is this command for me?
 							if (node.equals(nodeName) || node.equals("*"))
 							{
-								Executor executor = new Executor(nodeName, command);
+								Executor executor = new Executor(testId, testName, nodeName, path, command);
 								executor.start();
 								executor.join();
 							}

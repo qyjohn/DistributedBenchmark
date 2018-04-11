@@ -57,7 +57,11 @@ public class Submit
 		try
 		{
 			Submit submit = new Submit();
-			String contents = new String(Files.readAllBytes(Paths.get(args[0])));
+			String uuid = UUID.randomUUID().toString();
+			System.out.println("Test ID: " + uuid);
+			uuid = "{\n    \"testId\" : \"" + uuid + "\",";
+			String contents = new String(Files.readAllBytes(Paths.get(args[0]))).trim();
+			contents = uuid + contents.substring(1);
 			submit.send(contents);
 			submit.close();
 		} catch (Exception e)

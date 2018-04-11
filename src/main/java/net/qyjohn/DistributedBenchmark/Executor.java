@@ -6,14 +6,17 @@ import java.util.*;
 
 public class Executor extends Thread
 {
-	String node, command, outMsg, errMsg;
+	String testId, testName, node, path, command, outMsg, errMsg;
 	String jdbcUrl;
 	Timestamp t0, t1;
 	int exitVal, duration;
 
-	public Executor(String node, String command)
+	public Executor(String testId, String testName, String node, String path, String command)
 	{
+		this.testId = testId;
+		this.testName = testName;
 		this.node = node;
+		this.path = path;
 		this.command = command;
 
 		try
@@ -42,6 +45,7 @@ public class Executor extends Thread
 			System.out.println("    [-] Starting new executor");
 			System.out.println("        " + command);
 			execute();
+			System.out.println("        Exit Value: " + exitVal);
 			System.out.println("    [-] Shutting down executor");
 		} catch (Exception e)
 		{
@@ -55,13 +59,17 @@ public class Executor extends Thread
 			t0 = new Timestamp(new java.util.Date().getTime());
 			long t00 = System.currentTimeMillis();
 
+			String env_path = "PATH=" + path;
+			String[] env = {env_path};
 			Runtime rt = Runtime.getRuntime();
-			Process proc = rt.exec(command);
+			Process proc = rt.exec(command, env);
 			StreamGobbler stderr = new StreamGobbler(proc.getErrorStream());
 			StreamGobbler stdout = new StreamGobbler(proc.getInputStream());
 			stderr.start();
 			stdout.start();
 			exitVal = proc.waitFor();
+			stderr.join();
+			stdout.join();
 
 			t1 = new Timestamp(new java.util.Date().getTime());
 			long t01 = System.currentTimeMillis();
@@ -69,8 +77,6 @@ public class Executor extends Thread
 
 			outMsg = stdout.getOutput();
 			errMsg = stderr.getOutput();
-			System.out.println("        Exit Value: " + exitVal);
-
 			log();
 		} catch (Exception e)
 		{
@@ -89,8 +95,8 @@ public class Executor extends Thread
 		{
 			// JDBC connection
 			Connection conn = DriverManager.getConnection(jdbcUrl);
-			String sql = "INSERT INTO logs (node, command, stdout, stderr, start_time, end_time, exit_value, duration) VALUES "
-				+ " (?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO logs (node, command, stdout, stderr, start_time, end_time, exit_value, duration, test_id, test_name) VALUES "
+				+ " (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement preparedStatement = conn.prepareStatement(sql);
 			preparedStatement.setString(1, node);
 			preparedStatement.setString(2, command);
@@ -100,6 +106,8 @@ public class Executor extends Thread
 			preparedStatement.setTimestamp(6, t1);
 			preparedStatement.setInt(7, exitVal);
 			preparedStatement.setInt(8, duration);
+			preparedStatement.setString(9, testId);
+			preparedStatement.setString(10, testName);
 			preparedStatement.executeUpdate();
 		} catch (Exception e)
 		{
