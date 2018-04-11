@@ -96,3 +96,19 @@ Use the following example to compose your tests. In the Distributed and Parallel
     ]
 }
 ~~~~
+
+**(4) Web Frontend**
+
+The web front end can be used to view the test results. This is still work in progress.
+
+You need to install the Apache webserver, along with PHP to use the web front end. Then you simple create a symlink to the web front end under /var/www/html. 
+
+~~~~
+$ sudo apt-get update
+$ sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql
+$ cd /var/www/html
+$ sudo ln -s ~/DistributedBenchmark/web/ benchmark
+~~~~
+
+Update web/config.php with your database connection information. Then, access the web front end from a browser via http://<ip-address>/benchmark.
+
