@@ -110,5 +110,5 @@ $ cd /var/www/html
 $ sudo ln -s ~/DistributedBenchmark/web/ benchmark
 ~~~~
 
-Update web/config.php with your database connection information. Then, access the web front end from a browser via http://<ip-address>/benchmark.
+Update web/config.php with your database connection information. Then, access the web front end from a browser via http://[ip-address]/benchmark.
 
