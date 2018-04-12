@@ -1,10 +1,10 @@
 {
-    "testName" : "ls",
+    "testName" : "Test",
     "jobs" : [
         {
-            "node" : "*",
+            "node" : "172.31.0.20",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
-            "command" : "bash nettest.sh localhost"
+            "command" : "bash nettest.sh 172.31.5.37"
         }
     ]
 }
