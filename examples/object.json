@@ -2,12 +2,7 @@
     "testName" : "Object Storage",
     "jobs" : [
         {
-            "node" : "172.31.5.37",
-            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
-            "command" : "bash object_storage.sh AWS didadida123 /var/www/html/test.dat"
-        },
-        {
-            "node" : "172.31.1.210",
+            "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
             "command" : "bash object_storage.sh AWS didadida123 /var/www/html/test.dat"
         }
