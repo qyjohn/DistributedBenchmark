@@ -68,7 +68,7 @@ public class SpeedTest extends Thread
 			SpeedTest workers[] = new SpeedTest[nProc];			
 			for (int i=0; i<=repeat; i++)
 			{
-				int total = 32;
+				int total = 320;
 				ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 				for (int j=0; j<total; j++)
 				{
