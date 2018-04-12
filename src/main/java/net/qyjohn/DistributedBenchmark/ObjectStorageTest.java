@@ -63,7 +63,7 @@ public class ObjectStorageTest extends Thread
 			String file = args[2];
 
 			// Create a job queue
-			int total = 320;
+			int total = 3200;
 			ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 			for (int j=0; j<total; j++)
 			{

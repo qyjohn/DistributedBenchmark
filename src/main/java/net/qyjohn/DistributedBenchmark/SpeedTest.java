@@ -42,7 +42,6 @@ public class SpeedTest extends Thread
 		try
 		{
 			// args[0] is the IP address or hostname of the target
-			int repeat = 20;
 			String url = "http://" + args[0] + "/test.dat";
 			int nProc = Runtime.getRuntime().availableProcessors();
 
@@ -65,32 +64,32 @@ public class SpeedTest extends Thread
 			System.out.println("Time: " + t);
 			System.out.println("Speed: " + speed + "Bytes per second");
 
-			SpeedTest workers[] = new SpeedTest[nProc];			
-			for (int i=0; i<=repeat; i++)
+			// Create a job queue
+			int total = 3200;
+			ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
+			for (int j=0; j<total; j++)
 			{
-				int total = 320;
-				ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
-				for (int j=0; j<total; j++)
-				{
-					queue.add("job");
-				}
-
-				// Do this N times
-				time0 = System.currentTimeMillis();
-				for (int j=0; j<nProc; j++)
-				{
-					workers[j] = new SpeedTest(url, queue);
-					workers[j].start();
-				}
-				for (int j=0; j<nProc; j++)
-				{
-					workers[j].join();
-				}
-				time1 = System.currentTimeMillis();
-				t = time1 - time0;
-				speed = (total * length / t) / 1024;
-				System.out.println("Speed: " + speed + "MBps per second");
+				queue.add("job");
 			}
+
+			// Create nProc threads to work on the queue
+			SpeedTest workers[] = new SpeedTest[nProc];
+			time0 = System.currentTimeMillis();
+			for (int j=0; j<nProc; j++)
+			{
+				workers[j] = new SpeedTest(url, queue);
+				workers[j].start();
+			}
+			for (int j=0; j<nProc; j++)
+			{
+				workers[j].join();
+			}
+			time1 = System.currentTimeMillis();
+
+			// Calculate total time and throughput
+			t = time1 - time0;
+			speed = (total * length / t) / 1024;
+			System.out.println("Speed: " + speed + "MBps per second");
 		} catch (Exception e)
 		{
 			System.out.println(e.getMessage());
