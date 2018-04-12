@@ -3,7 +3,7 @@
     "jobs" : [
         {
             "node" : "*",
-            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
             "command" : "bash iozone.sh 128000 /data/test.tmp"
         }
     ]
