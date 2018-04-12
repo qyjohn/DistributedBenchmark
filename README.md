@@ -8,6 +8,7 @@ We assume that you will run the Distributed and Parallel Testing Framework on Ub
 ~~~~
 $ sudo apt-get update
 $ sudo apt-get install openjdk-8-jdk maven rabbitmq-server mysql-server git
+$ sudo apt-get install gcc make libx11-dev libgl1-mesa-dev libxext-dev
 $ cd ~
 $ git clone https://github.com/qyjohn/DistributedBenchmark
 $ cd DistributedBenchmark
