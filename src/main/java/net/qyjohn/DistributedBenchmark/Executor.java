@@ -80,6 +80,10 @@ public class Executor extends Thread
 			log();
 		} catch (Exception e)
 		{
+			exitVal = -100;
+			outMsg = "";
+			errMsg = e.getMessage();
+			log();
 		}
 	}
 

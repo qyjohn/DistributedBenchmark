@@ -56,6 +56,13 @@ $ sudo service mysql restart
 $ sudo service rabbitmq-server restart
 ~~~~
 
+For the network I/O tests you need to have the Apache web server installed, with a test file of 100 MB:
+
+~~~~
+$ sudo apt-get install apache2
+$ sudo dd if=/dev/zero of=/var/www/html/test.dat count=100 bs=1M
+~~~~
+
 **(2) Running Tests**
 
 Open two SSH connections to your server, one to submit jobs (pretend that this is the master node), the other to execute jobs (pretend that this is the worker node).

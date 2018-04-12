@@ -1,0 +1,344 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="keywords" content="linux, benchmarks, benchmarking">
+  <title>Benchmark of ip-172-31-0-20 / GNU/Linux on Wed Apr 11 2018</title>
+  <style type="text/css">
+    table {
+      margin: 1em 1em 1em 0;
+      background: #f9f9f9;
+      border: 1px #aaaaaa solid;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      border: 1px #aaaaaa solid;
+      padding: 0.2em;
+    }
+
+    table th {
+      background: #f2f2f2;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h2>Benchmark of ip-172-31-0-20 / GNU/Linux on Wed Apr 11 2018</h2>
+<p><b>BYTE UNIX Benchmarks (Version 5.1.3)</b></p>
+
+<h3>Test System Information</h3>
+<p><table>
+<tr>
+   <td><b>System:</b></td>
+   <td colspan=2>ip-172-31-0-20: GNU/Linux</td>
+</tr><tr>
+   <td><b>OS:</b></td>
+   <td colspan=2>GNU/Linux -- 4.4.0-1049-aws -- #58-Ubuntu SMP Fri Jan 12 23:17:09 UTC 2018</td>
+</tr><tr>
+   <td><b>Machine:</b></td>
+   <td colspan=2>x86_64: x86_64</td>
+</tr><tr>
+   <td><b>Language:</b></td>
+   <td colspan=2>en_US.utf8 (charmap="UTF-8", collate="UTF-8")</td>
+</tr>
+<tr>
+   <td rowspan=4><b>CPUs:</b></td>
+   <td><b>0:</b></td>
+   <td>Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (4600.1 bogomips)<br/>
+       Hyper-Threading, x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET</td>
+</tr>
+<tr>
+   <td><b>1:</b></td>
+   <td>Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (4600.1 bogomips)<br/>
+       Hyper-Threading, x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET</td>
+</tr>
+<tr>
+   <td><b>2:</b></td>
+   <td>Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (4600.1 bogomips)<br/>
+       Hyper-Threading, x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET</td>
+</tr>
+<tr>
+   <td><b>3:</b></td>
+   <td>Intel(R) Xeon(R) CPU E5-2686 v4 @ 2.30GHz (4600.1 bogomips)<br/>
+       Hyper-Threading, x86-64, MMX, Physical Address Ext, SYSENTER/SYSEXIT, SYSCALL/SYSRET</td>
+</tr>
+<tr>
+   <td><b>Uptime:</b></td>
+   <td colspan=2>21:55:57 up 68 days, 21:27,  3 users,  load average: 0.00, 0.00, 0.00; runlevel 2018-02-02</td>
+</tr>
+</table></p>
+
+<p><hr/></p>
+<h3>Benchmark Run: 4 CPUs; 1 parallel process</h3>
+<p>Time: 21:55:57 - 22:24:23; 28m 26s</p>
+
+<h4>System Benchmarks</h4>
+<p><table width="100%">
+<tr>
+   <th align=left>Test</th>
+   <th align=right>Score</th>
+   <th align=left>Unit</th>
+   <th align=right>Time</th>
+   <th align=right>Iters.</th>
+   <th align=right>Baseline</th>
+   <th align=right>Index</th>
+</tr>
+<tr>
+   <td><b>Dhrystone 2 using register variables</b></td>
+   <td align=right><tt>32062088.4</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>116700.0</tt></td>
+   <td align=right><tt>2747.4</tt></td>
+</tr>
+<tr>
+   <td><b>Double-Precision Whetstone</b></td>
+   <td align=right><tt>3911.4</tt></td>
+   <td align=left><tt>MWIPS</tt></td>
+   <td align=right><tt>9.9 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>55.0</tt></td>
+   <td align=right><tt>711.2</tt></td>
+</tr>
+<tr>
+   <td><b>Execl Throughput</b></td>
+   <td align=right><tt>799.2</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>29.8 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>43.0</tt></td>
+   <td align=right><tt>185.9</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 1024 bufsize 2000 maxblocks</b></td>
+   <td align=right><tt>709973.5</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>3960.0</tt></td>
+   <td align=right><tt>1792.9</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 256 bufsize 500 maxblocks</b></td>
+   <td align=right><tt>186399.8</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>1655.0</tt></td>
+   <td align=right><tt>1126.3</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 4096 bufsize 8000 maxblocks</b></td>
+   <td align=right><tt>2291601.3</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>5800.0</tt></td>
+   <td align=right><tt>3951.0</tt></td>
+</tr>
+<tr>
+   <td><b>Pipe Throughput</b></td>
+   <td align=right><tt>1029002.1</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>12440.0</tt></td>
+   <td align=right><tt>827.2</tt></td>
+</tr>
+<tr>
+   <td><b>Pipe-based Context Switching</b></td>
+   <td align=right><tt>41177.4</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>4000.0</tt></td>
+   <td align=right><tt>102.9</tt></td>
+</tr>
+<tr>
+   <td><b>Process Creation</b></td>
+   <td align=right><tt>8729.0</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>126.0</tt></td>
+   <td align=right><tt>692.8</tt></td>
+</tr>
+<tr>
+   <td><b>Shell Scripts (1 concurrent)</b></td>
+   <td align=right><tt>332.9</tt></td>
+   <td align=left><tt>lpm</tt></td>
+   <td align=right><tt>60.1 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>42.4</tt></td>
+   <td align=right><tt>78.5</tt></td>
+</tr>
+<tr>
+   <td><b>Shell Scripts (8 concurrent)</b></td>
+   <td align=right><tt>94.3</tt></td>
+   <td align=left><tt>lpm</tt></td>
+   <td align=right><tt>60.1 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>6.0</tt></td>
+   <td align=right><tt>157.2</tt></td>
+</tr>
+<tr>
+   <td><b>System Call Overhead</b></td>
+   <td align=right><tt>830303.0</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>15000.0</tt></td>
+   <td align=right><tt>553.5</tt></td>
+</tr>
+<tr>
+   <td colspan=6><b>System Benchmarks Index Score:</b></td>
+   <td align=right><b><tt>569.6</tt></b></td>
+</tr>
+</table></p>
+
+<p><hr/></p>
+<h3>Benchmark Run: 4 CPUs; 4 parallel processes</h3>
+<p>Time: 22:24:23 - 22:56:04; 31m 41s</p>
+
+<h4>System Benchmarks</h4>
+<p><table width="100%">
+<tr>
+   <th align=left>Test</th>
+   <th align=right>Score</th>
+   <th align=left>Unit</th>
+   <th align=right>Time</th>
+   <th align=right>Iters.</th>
+   <th align=right>Baseline</th>
+   <th align=right>Index</th>
+</tr>
+<tr>
+   <td><b>Dhrystone 2 using register variables</b></td>
+   <td align=right><tt>127864261.2</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>116700.0</tt></td>
+   <td align=right><tt>10956.7</tt></td>
+</tr>
+<tr>
+   <td><b>Double-Precision Whetstone</b></td>
+   <td align=right><tt>15596.2</tt></td>
+   <td align=left><tt>MWIPS</tt></td>
+   <td align=right><tt>9.9 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>55.0</tt></td>
+   <td align=right><tt>2835.7</tt></td>
+</tr>
+<tr>
+   <td><b>Execl Throughput</b></td>
+   <td align=right><tt>3206.7</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>29.4 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>43.0</tt></td>
+   <td align=right><tt>745.8</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 1024 bufsize 2000 maxblocks</b></td>
+   <td align=right><tt>55883.1</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>30.1 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>3960.0</tt></td>
+   <td align=right><tt>141.1</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 256 bufsize 500 maxblocks</b></td>
+   <td align=right><tt>1223.5</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>1655.0</tt></td>
+   <td align=right><tt>7.4</tt></td>
+</tr>
+<tr>
+   <td><b>File Copy 4096 bufsize 8000 maxblocks</b></td>
+   <td align=right><tt>493323.4</tt></td>
+   <td align=left><tt>KBps</tt></td>
+   <td align=right><tt>32.2 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>5800.0</tt></td>
+   <td align=right><tt>850.6</tt></td>
+</tr>
+<tr>
+   <td><b>Pipe Throughput</b></td>
+   <td align=right><tt>4119729.6</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>12440.0</tt></td>
+   <td align=right><tt>3311.7</tt></td>
+</tr>
+<tr>
+   <td><b>Pipe-based Context Switching</b></td>
+   <td align=right><tt>641194.2</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>4000.0</tt></td>
+   <td align=right><tt>1603.0</tt></td>
+</tr>
+<tr>
+   <td><b>Process Creation</b></td>
+   <td align=right><tt>39002.3</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>30.0 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>126.0</tt></td>
+   <td align=right><tt>3095.4</tt></td>
+</tr>
+<tr>
+   <td><b>Shell Scripts (1 concurrent)</b></td>
+   <td align=right><tt>801.0</tt></td>
+   <td align=left><tt>lpm</tt></td>
+   <td align=right><tt>60.1 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>42.4</tt></td>
+   <td align=right><tt>188.9</tt></td>
+</tr>
+<tr>
+   <td><b>Shell Scripts (8 concurrent)</b></td>
+   <td align=right><tt>97.4</tt></td>
+   <td align=left><tt>lpm</tt></td>
+   <td align=right><tt>61.6 s</tt></td>
+   <td align=right><tt>2</tt></td>
+   <td align=right><tt>6.0</tt></td>
+   <td align=right><tt>162.3</tt></td>
+</tr>
+<tr>
+   <td><b>System Call Overhead</b></td>
+   <td align=right><tt>2969930.1</tt></td>
+   <td align=left><tt>lps</tt></td>
+   <td align=right><tt>10.0 s</tt></td>
+   <td align=right><tt>7</tt></td>
+   <td align=right><tt>15000.0</tt></td>
+   <td align=right><tt>1980.0</tt></td>
+</tr>
+<tr>
+   <td colspan=6><b>System Benchmarks Index Score:</b></td>
+   <td align=right><b><tt>723.3</tt></b></td>
+</tr>
+</table></p>
+
+<p><hr/></p>
+<div><b>No Warranties:</b> This information is provided free of charge and "as
+is" without any warranty, condition, or representation of any kind,
+either express or implied, including but not limited to, any warranty
+respecting non-infringement, and the implied warranties of conditions
+of merchantability and fitness for a particular purpose. All logos or
+trademarks on this site are the property of their respective owner. In
+no event shall the author be liable for any
+direct, indirect, special, incidental, consequential or other damages
+howsoever caused whether arising in contract, tort, or otherwise,
+arising out of or in connection with the use or performance of the
+information contained on this web site.</div>
+</body>
+</html>

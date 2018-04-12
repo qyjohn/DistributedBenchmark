@@ -1,10 +1,10 @@
 {
-    "testName" : "ls",
+    "testName" : "Disk IO",
     "jobs" : [
         {
             "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
-            "command" : "bash nettest.sh localhost"
+            "command" : "bash iozone.sh 128000 /data/test.tmp"
         }
     ]
 }

@@ -1,5 +1,5 @@
 {
-    "testName" : "ls",
+    "testName" : "Network IO",
     "jobs" : [
         {
             "node" : "*",
