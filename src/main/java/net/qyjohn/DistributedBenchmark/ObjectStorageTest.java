@@ -47,7 +47,7 @@ public class ObjectStorageTest extends Thread
 				// Create a random object key, upload, then delete
 				String key = UUID.randomUUID().toString();
 				storage.upload(bucket, key, file);
-				storage.delete(bucket, key);
+//				storage.delete(bucket, key);
 			}
 		} catch (Exception e)
 		{
