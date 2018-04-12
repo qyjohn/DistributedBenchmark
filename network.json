@@ -2,9 +2,14 @@
     "testName" : "Network IO",
     "jobs" : [
         {
-            "node" : "*",
+            "node" : "172.31.5.37",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
-            "command" : "bash nettest.sh localhost"
+            "command" : "bash nettest.sh 172.31.1.210"
+        },
+        {
+            "node" : "172.31.1.210",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.5.37"
         }
     ]
 }

@@ -4,7 +4,7 @@
         {
             "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
-            "command" : "bash iozone.sh 128000 /data/test.tmp"
+            "command" : "bash iozone.sh 128000000 /data/test.tmp"
         }
     ]
 }
