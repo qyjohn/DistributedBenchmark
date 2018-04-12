@@ -47,7 +47,7 @@ public class ObjectStorageTest extends Thread
 				// Create a random object key, upload, then delete
 				String key = UUID.randomUUID().toString();
 				storage.upload(bucket, key, file);
-//				storage.delete(bucket, key);
+				storage.delete(bucket, key);
 			}
 		} catch (Exception e)
 		{
@@ -87,7 +87,7 @@ public class ObjectStorageTest extends Thread
 
 			// Calculate total time
 			long t = time1 - time0;
-			System.out.println("Total time: " + t + "milliseconds");
+			System.out.println("Total time: " + t + " milliseconds");
 		} catch (Exception e)
 		{
 			System.out.println(e.getMessage());
