@@ -74,6 +74,7 @@ public class ObjectStorageTest extends Thread
 					System.out.println(e.getMessage());
 				}
 			}
+			System.out.println(total);
 			ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 			for (int j=0; j<total; j++)
 			{
