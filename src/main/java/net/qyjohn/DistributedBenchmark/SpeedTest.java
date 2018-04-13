@@ -66,6 +66,16 @@ public class SpeedTest extends Thread
 
 			// Create a job queue
 			int total = 3200;
+			if (args.length == 2)
+			{
+				try
+				{
+					total = Integer.parseInt(args[1]);
+				} catch (Exception e)
+				{
+					System.out.println(e.getMessage());
+				}
+			}
 			ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 			for (int j=0; j<total; j++)
 			{
