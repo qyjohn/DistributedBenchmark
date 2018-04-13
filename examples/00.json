@@ -4,7 +4,7 @@
         {
             "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
-            "command" : "rm /home/ubuntu/DistributedBenchmark/libs/log4j-core-2.8.2.jar"
+            "command" : "git pull"
         }
     ]
 }

@@ -4,7 +4,7 @@
         {
             "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
-            "command" : "bash object_storage.sh AWS didadida123 /var/www/html/test.dat"
+            "command" : "bash object_storage.sh AWS didadida123 /var/www/html/test.dat 3200"
         }
     ]
 }

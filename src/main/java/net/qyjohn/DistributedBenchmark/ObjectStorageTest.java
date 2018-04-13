@@ -64,6 +64,16 @@ public class ObjectStorageTest extends Thread
 
 			// Create a job queue
 			int total = 3200;
+			if (args.length == 4)
+			{
+				try
+				{
+					total = Integer.parseInt(args[3]);
+				} catch (Exception e)
+				{
+					System.out.println(e.getMessage());
+				}
+			}
 			ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();
 			for (int j=0; j<total; j++)
 			{
