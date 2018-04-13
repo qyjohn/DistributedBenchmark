@@ -1,0 +1,10 @@
+{
+    "testName" : "Apt Install",
+    "jobs" : [
+        {
+            "node" : "*",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
+            "command" : "sudo apt-get -y install gcc make libx11-dev libgl1-mesa-dev libxext-dev"
+        }
+    ]
+}
