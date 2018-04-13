@@ -2,9 +2,9 @@
     "testName" : "Test",
     "jobs" : [
         {
-            "node" : "172.31.0.20",
+            "node" : "*",
             "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/efs/DistributedBenchmark/bin",
-            "command" : "bash nettest.sh 172.31.5.37"
+            "command" : "rm /home/ubuntu/DistributedBenchmark/libs/log4j-core-2.8.2.jar"
         }
     ]
 }

@@ -1,0 +1,107 @@
+{
+    "testName" : "Network IO",
+    "jobs" : [
+        {
+            "node" : "172.31.7.72",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.5.136"
+        },
+        {
+            "node" : "172.31.5.136",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.7.72"
+        },
+        {
+            "node" : "172.31.4.100",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.2.70"
+        },
+        {
+            "node" : "172.31.2.70",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.4.100"
+        },
+        {
+            "node" : "172.31.11.132",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.14.36"
+        },
+        {
+            "node" : "172.31.14.36",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.11.132"
+        },
+        {
+            "node" : "172.31.12.161",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.2.20"
+        },
+        {
+            "node" : "172.31.2.20",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.12.161"
+        },
+        {
+            "node" : "172.31.14.150",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.13.79"
+        },
+        {
+            "node" : "172.31.13.79",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.14.150"
+        },
+        {
+            "node" : "172.31.15.111",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.5.168"
+        },
+        {
+            "node" : "172.31.5.168",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.15.111"
+        },
+        {
+            "node" : "172.31.5.202",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.7.222"
+        },
+        {
+            "node" : "172.31.7.222",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.5.202"
+        },
+        {
+            "node" : "172.31.11.153",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.0.58"
+        },
+        {
+            "node" : "172.31.0.58",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.11.153"
+        },
+        {
+            "node" : "172.31.6.87",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.10.88"
+        },
+        {
+            "node" : "172.31.10.88",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.6.87"
+        },
+        {
+            "node" : "172.31.12.171",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.0.206"
+        },
+        {
+            "node" : "172.31.0.206",
+            "path" : "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:~/DistributedBenchmark/bin",
+            "command" : "bash nettest.sh 172.31.12.171"
+        }
+    ]
+}
+
+
