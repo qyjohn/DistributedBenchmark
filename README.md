@@ -3,12 +3,13 @@
 
 **(1) Installation and Configuration (Master Node)**
 
-We assume that you will run the Distributed and Parallel Testing Framework on Ubuntu 16.04. You need to have a recent version of JDK and RabbitMQ. Then you can build the project from source code with the following steps.
+We assume that you will run the Distributed and Parallel Testing Framework on Ubuntu 16.04. You need to have a recent version of JDK and RabbitMQ. Then you can build the project from source code with the following steps. 
 
 ~~~~
 $ sudo apt-get update
 $ sudo apt-get install openjdk-8-jdk maven rabbitmq-server mysql-server git
-$ sudo apt-get install gcc make libx11-dev libgl1-mesa-dev libxext-dev
+$ sudo apt-get install screen mdadm apache2 gcc make libx11-dev libgl1-mesa-dev libxext-dev
+$ sudo dd if=/dev/zero of=/var/www/html/test.dat count=100 bs=1M
 $ cd ~
 $ git clone https://github.com/qyjohn/DistributedBenchmark
 $ cd DistributedBenchmark

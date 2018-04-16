@@ -36,7 +36,7 @@ public class HuaweiObsHandler implements ObjectStorageHandler
 		{
 			File file = new File(fileFullPath);
 			client.putObject(bucket, key, file);
-			System.out.println("Uploading " + bucket + "/" + key);
+//			System.out.println("Uploading " + bucket + "/" + key);
 		} catch (Exception e)
 		{
 			System.out.println(e.getMessage());
