@@ -11,8 +11,8 @@ $ sudo apt-get install openjdk-8-jdk maven rabbitmq-server mysql-server git
 $ sudo apt-get install screen mdadm apache2 gcc make libx11-dev libgl1-mesa-dev libxext-dev
 $ sudo dd if=/dev/zero of=/var/www/html/test.dat count=100 bs=1M
 $ cd ~
-$ git clone https://github.com/qyjohn/DistributedBenchmark
-$ cd DistributedBenchmark
+$ git clone https://github.com/qyjohn/ScaleBench
+$ cd ScaleBench
 $ mvn package
 ~~~~
 
@@ -71,8 +71,8 @@ $ sudo dd if=/dev/zero of=/var/www/html/test.dat count=100 bs=1M
 $ sudo apt-get update
 $ sudo apt-get install openjdk-8-jdk maven apache2 git
 $ cd ~
-$ git clone https://github.com/qyjohn/DistributedBenchmark
-$ cd DistributedBenchmark
+$ git clone https://github.com/qyjohn/ScaleBench
+$ cd ScaleBench
 $ mvn package
 $ sudo dd if=/dev/zero of=/var/www/html/test.dat count=100 bs=1M
 ~~~~
@@ -85,14 +85,14 @@ Open two SSH connections to your server, one to submit jobs (pretend that this i
 On the worker node, start the worker:
 
 ~~~~
-$ cd ~/DistributedBenchmark
+$ cd ~/ScaleBench
 $ java -cp target/DistributedBenchmark-jar-with-dependencies.jar:. net.qyjohn.DistributedBenchmark.Worker 
 ~~~~
 
 On the master node, submit a test job:
 
 ~~~~
-$ cd ~/DistributedBenchmark
+$ cd ~/ScaleBench
 $ java -cp target/DistributedBenchmark-jar-with-dependencies.jar:. net.qyjohn.DistributedBenchmark.Submit ls.json
 $ java -cp target/DistributedBenchmark-jar-with-dependencies.jar:. net.qyjohn.DistributedBenchmark.Submit df.json
 ~~~~
@@ -138,7 +138,7 @@ You need to install the Apache webserver, along with PHP to use the web front en
 $ sudo apt-get update
 $ sudo apt-get install apache2 php libapache2-mod-php php-mcrypt php-mysql
 $ cd /var/www/html
-$ sudo ln -s ~/DistributedBenchmark/web/ benchmark
+$ sudo ln -s ~/ScaleBench/web/ benchmark
 ~~~~
 
 Update web/config.php with your database connection information. Then, access the web front end from a browser via http://[ip-address]/benchmark.
