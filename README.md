@@ -25,7 +25,7 @@ mysql> CREATE USER 'username'@'%' IDENTIFIED BY 'password';
 mysql> GRANT ALL PRIVILEGES ON benchmark.* TO 'username'@'%';
 mysql> quit
 
-$ cd ~/DistributedBenchmark
+$ cd ~/ScaleBench
 $ mysql -u username -p benchmark < benchmark.sql
 ~~~~
 
