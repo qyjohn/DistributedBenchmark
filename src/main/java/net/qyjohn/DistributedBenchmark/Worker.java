@@ -18,7 +18,14 @@ public class Worker
 		try
 		{
 			// Getting the IP address of the worker node
-			final String nodeName = InetAddress.getLocalHost().getHostAddress();
+                        String nodeIP = "127.0.0.1";
+                        try
+                        {
+                                DatagramSocket socket = new DatagramSocket();
+                                socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
+                                nodeIP = socket.getLocalAddress().getHostAddress();
+                        } catch (Exception e) {}
+                        final String nodeName = nodeIP;
 
 			// Getting database properties from db.properties
 			Properties prop = new Properties();
